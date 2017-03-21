@@ -1,0 +1,62 @@
+﻿Compilación iniciada a las 21/03/2017 16:36:54.
+     1>Proyecto "C:\hlocal\ProyectosSDL\HolaSDL\HolaSDL.vcxproj" en el nodo 2 (Build destinos).
+     1>ClCompile:
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BallObserver.cpp BounceOnBorders.cpp ComponentSwitcher.cpp Font.cpp GameComponent.cpp GameManager.cpp GameObject.cpp ImageRendered.cpp InputComponent.cpp Main.cpp Music.cpp PaddleAIPhysics.cpp PaddleKeyboardInputComp.cpp PaddleMouseInputComp.cpp PhysicsComponent.cpp PingPong.cpp PingPongPhysics.cpp RectRender.cpp RenderComponent.cpp SDLGame.cpp SDLResources.cpp SimpleMovePhysics.cpp SoundEffect.cpp StopOnBordersPhysics.cpp Texture.cpp
+         Texture.cpp
+     1>c:\hlocal\proyectossdl\holasdl\font.h(6): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         StopOnBordersPhysics.cpp
+     1>c:\hlocal\proyectossdl\holasdl\sdlgame.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         SoundEffect.cpp
+     1>c:\hlocal\proyectossdl\holasdl\soundeffect.h(4): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_mixer.h': No such file or directory
+         SimpleMovePhysics.cpp
+     1>c:\hlocal\proyectossdl\holasdl\sdlgame.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         SDLResources.cpp
+     1>c:\hlocal\proyectossdl\holasdl\font.h(6): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         SDLGame.cpp
+     1>c:\hlocal\proyectossdl\holasdl\sdlgame.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         RenderComponent.cpp
+     1>c:\hlocal\proyectossdl\holasdl\sdlgame.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         RectRender.cpp
+     1>c:\hlocal\proyectossdl\holasdl\sdlgame.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         PingPongPhysics.cpp
+     1>c:\hlocal\proyectossdl\holasdl\sdlgame.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         PingPong.cpp
+     1>c:\hlocal\proyectossdl\holasdl\pingpong.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL2_ttf/SDL_ttf.h': No such file or directory
+         PhysicsComponent.cpp
+     1>c:\hlocal\proyectossdl\holasdl\sdlgame.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         PaddleMouseInputComp.cpp
+     1>c:\hlocal\proyectossdl\holasdl\sdlgame.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         PaddleKeyboardInputComp.cpp
+     1>c:\hlocal\proyectossdl\holasdl\paddlekeyboardinputcomp.h(4): fatal error C1083: No se puede abrir el archivo incluir: 'SDL2/SDL.h': No such file or directory
+         PaddleAIPhysics.cpp
+     1>c:\hlocal\proyectossdl\holasdl\sdlgame.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         Music.cpp
+     1>c:\hlocal\proyectossdl\holasdl\music.h(4): fatal error C1083: No se puede abrir el archivo incluir: 'SDL2_mixer/SDL_mixer.h': No such file or directory
+         Main.cpp
+     1>c:\hlocal\proyectossdl\holasdl\pingpong.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL2_ttf/SDL_ttf.h': No such file or directory
+         InputComponent.cpp
+     1>c:\hlocal\proyectossdl\holasdl\sdlgame.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         ImageRendered.cpp
+     1>c:\hlocal\proyectossdl\holasdl\sdlgame.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         GameObject.cpp
+     1>c:\hlocal\proyectossdl\holasdl\sdlgame.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         GameManager.cpp
+     1>c:\hlocal\proyectossdl\holasdl\sdlgame.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         Generando código...
+         Compilando...
+         GameComponent.cpp
+     1>c:\hlocal\proyectossdl\holasdl\sdlgame.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         Font.cpp
+     1>c:\hlocal\proyectossdl\holasdl\font.h(6): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         ComponentSwitcher.cpp
+     1>c:\hlocal\proyectossdl\holasdl\componentswitcher.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL2/SDL.h': No such file or directory
+         BounceOnBorders.cpp
+     1>c:\hlocal\proyectossdl\holasdl\sdlgame.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         BallObserver.cpp
+     1>c:\hlocal\proyectossdl\holasdl\sdlgame.h(5): fatal error C1083: No se puede abrir el archivo incluir: 'SDL_ttf.h': No such file or directory
+         Generando código...
+     1>Compilación del proyecto terminada "C:\hlocal\ProyectosSDL\HolaSDL\HolaSDL.vcxproj" (Build destinos) -- ERROR.
+
+ERROR al compilar.
+
+Tiempo transcurrido 00:00:02.35
