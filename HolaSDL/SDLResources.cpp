@@ -2,9 +2,9 @@
 #include "SDLGame.h"
 
 SDLResources::SDLResources(SDLGame* game) :
-game_(game), numOfTextures_(0), textures_(nullptr), numOfFonts_(0), fonts_(
-nullptr), numOfMusic_(0), music_(nullptr), numOfSoundEffects_(
-0), soundEffects_(nullptr) {
+		game_(game), numOfTextures_(0), textures_(nullptr), numOfFonts_(0), fonts_(
+				nullptr), numOfMusic_(0), music_(nullptr), numOfSoundEffects_(
+				0), soundEffects_(nullptr) {
 }
 
 void SDLResources::setTextures(std::vector<std::string> textures) {

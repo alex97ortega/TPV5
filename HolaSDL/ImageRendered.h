@@ -4,7 +4,7 @@
 #include "RenderComponent.h"
 #include "Texture.h"
 
-class ImageRendered : public RenderComponent {
+class ImageRendered: public RenderComponent {
 public:
 	ImageRendered(Texture* texture);
 	virtual ~ImageRendered();

@@ -1,11 +1,11 @@
 #include "Font.h"
 
 Font::Font() :
-font_(nullptr) {
+		font_(nullptr) {
 }
 
 Font::Font(std::string fileName, int size) {
-	load(fileName, size);
+		load(fileName, size);
 }
 
 Font::~Font() {
@@ -25,10 +25,9 @@ void Font::close() {
 }
 
 SDL_Surface* Font::renderText(std::string text, SDL_Color color) const {
-	if (font_) {
+	if ( font_ ) {
 		return TTF_RenderText_Solid(font_, text.c_str(), color);
-	}
-	else {
+	} else {
 		return nullptr;
 	}
 }

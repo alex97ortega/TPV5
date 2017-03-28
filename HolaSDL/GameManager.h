@@ -8,7 +8,7 @@
 #include "Font.h"
 #include "Texture.h"
 
-class GameManager : public GameObject, public BallObserver {
+class GameManager: public GameObject, public BallObserver {
 
 public:
 	GameManager(SDLGame* game);

@@ -1,9 +1,9 @@
 /*
-* SDLResources.h
-*
-*  Created on: Mar 18, 2017
-*      Author: genaim
-*/
+ * SDLResources.h
+ *
+ *  Created on: Mar 18, 2017
+ *      Author: genaim
+ */
 
 #ifndef SDLRESOURCES_H_
 #define SDLRESOURCES_H_

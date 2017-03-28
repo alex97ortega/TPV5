@@ -1,11 +1,11 @@
 #include "Music.h"
 
 Music::Music() :
-music_(nullptr) {
+		music_(nullptr) {
 }
 
 Music::Music(std::string fileName) :
-music_(nullptr) {
+		music_(nullptr) {
 	load(fileName);
 }
 

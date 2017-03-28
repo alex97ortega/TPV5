@@ -1,8 +1,8 @@
 #include "PaddleKeyboardInputComp.h"
 
 PaddleKeyboardInputComp::PaddleKeyboardInputComp(SDL_Keycode up_key,
-	SDL_Keycode down_key, SDL_Keycode stop_key, unsigned int velocity) :
-	InputComponent() {
+		SDL_Keycode down_key, SDL_Keycode stop_key, unsigned int velocity) :
+		InputComponent() {
 	up_key_ = up_key;
 	down_key_ = down_key;
 	stop_key_ = stop_key;

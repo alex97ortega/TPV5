@@ -21,9 +21,7 @@ public:
 		Blank, TennisBall, KeyBoardIcon, MouseIcon, AIIcon
 	};
 
-	const std::vector<std::string> imageFiles_{ "images/blank.png",
-		"images/tennis_ball.png", "images/keyboard.png", "images/mouse.png",
-		"images/ai.png" };
+	static std::vector<std::string> imageFiles_;
 
 	// Fonts -- they are pair of filename and size, each is loaded as
 	// an instance of Font
@@ -32,10 +30,7 @@ public:
 		ARIAL16, ARIAL24, NESChimera16, NESChimera24, CaptureIt16, CaptureIt24
 	};
 
-	const std::vector<std::pair<std::string, int>> fontFiles{ {
-			"fonts/ARIAL.ttf", 16 }, { "fonts/ARIAL.ttf", 24 }, {
-				"fonts/NES-Chimera.ttf", 16 }, { "fonts/NES-Chimera.ttf", 24 }, {
-					"fonts/Capture_it.ttf", 16 }, { "fonts/Capture_it.ttf", 24 } };
+	static std::vector<std::pair<std::string, int>> fontFiles_;
 
 	// Music -- each file is loaded as an instance of Music
 	//
@@ -43,8 +38,7 @@ public:
 		Beat, Cheer, Boooo
 	};
 
-	const std::vector<std::string> musicFiles{ "sound/beat.wav",
-		"sound/cheer.wav", "sound/boooo.wav" };
+	static std::vector<std::string> musicFiles_;
 
 	// Sound Effects -- each file is loaded as an instance of SoundEffect
 	//
@@ -52,8 +46,7 @@ public:
 		Wall_Hit, Paddle_Hit
 	};
 
-	const std::vector<std::string> soundEffectFiles{ "sound/wall_hit.wav",
-		"sound/paddle_hit.wav" };
+	static std::vector<std::string> soundEffectFiles_;
 
 public:
 	SDLGame(std::string windowTitle_, int width, int height);

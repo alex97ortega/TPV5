@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
     <ClCompile Include="BallObserver.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
@@ -46,6 +43,9 @@
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
     <ClCompile Include="InputComponent.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
     <ClCompile Include="Music.cpp">
@@ -176,5 +176,50 @@
     <ClInclude Include="Vector2D.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="fonts\ARIAL.ttf" />
+    <Font Include="fonts\Capture_it.ttf" />
+    <Font Include="fonts\NES-Chimera.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\ai.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="images\blank.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="images\keyboard.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="images\mouse.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="images\tennis_ball.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="sound\beat.wav">
+      <Filter>Archivos de recursos</Filter>
+    </Media>
+    <Media Include="sound\boooo.wav">
+      <Filter>Archivos de recursos</Filter>
+    </Media>
+    <Media Include="sound\cheer.wav">
+      <Filter>Archivos de recursos</Filter>
+    </Media>
+    <Media Include="sound\missed.wav">
+      <Filter>Archivos de recursos</Filter>
+    </Media>
+    <Media Include="sound\paddle_hit.wav">
+      <Filter>Archivos de recursos</Filter>
+    </Media>
+    <Media Include="sound\score_update.wav">
+      <Filter>Archivos de recursos</Filter>
+    </Media>
+    <Media Include="sound\wall_hit.wav">
+      <Filter>Archivos de recursos</Filter>
+    </Media>
   </ItemGroup>
 </Project>

@@ -44,7 +44,7 @@ public:
 	int getHeight() const;
 	void setHeight(int height);
 
-	const Vector2D<int>& getDirection() const;
+    const Vector2D<int>& getDirection() const;
 	void setDirection(const Vector2D<int> &dir);
 	void setDirectionX(int x);
 	void setDirectionY(int y);

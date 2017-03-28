@@ -1,12 +1,12 @@
 #include "SoundEffect.h"
 
 SoundEffect::SoundEffect() :
-chunck_(nullptr) {
+		chunck_(nullptr) {
 
 }
 
 SoundEffect::SoundEffect(std::string fileName) :
-chunck_(nullptr) {
+		chunck_(nullptr) {
 	load(fileName);
 }
 

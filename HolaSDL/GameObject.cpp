@@ -1,13 +1,13 @@
 #include "GameObject.h"
 
 GameObject::GameObject(SDLGame* game) :
-game_(game), active_(true), moving_(true), width_(), height_(), pos_(), dir_() {
+		game_(game), active_(true), moving_(true), width_(), height_(), pos_(), dir_() {
 }
 
 GameObject::GameObject(SDLGame* game, int width, int height, Vector2D<int> pos,
-	Vector2D<int> dir) :
-	game_(game), active_(true), moving_(true), width_(width), height_(
-	height), pos_(pos), dir_(dir) {
+		Vector2D<int> dir) :
+		game_(game), active_(true), moving_(true), width_(width), height_(
+				height), pos_(pos), dir_(dir) {
 }
 
 GameObject::~GameObject() {

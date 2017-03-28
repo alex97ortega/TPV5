@@ -1,4 +1,3 @@
-#pragma once
 #ifndef BOUNCEONBORDERS_H_
 #define BOUNCEONBORDERS_H_
 
@@ -6,9 +5,9 @@
 #include "SoundEffect.h"
 
 /*
-*
-*/
-class BounceOnBorders : public PhysicsComponent {
+ *
+ */
+class BounceOnBorders: public PhysicsComponent {
 public:
 	BounceOnBorders(bool left, bool right, bool top, bool bottom);
 	virtual ~BounceOnBorders();
@@ -24,4 +23,3 @@ private:
 };
 
 #endif /* BOUNCEONBORDERS_H_ */
-

@@ -2,7 +2,7 @@
 #define PINGPONG_H_
 
 #include <SDL.h>
-#include <SDL2_ttf/SDL_ttf.h>
+#include <SDL_ttf.h>
 #include <vector>
 
 #include "SDLGame.h"
@@ -13,7 +13,7 @@
 #include "RenderComponent.h"
 #include "GameManager.h"
 
-class PingPong : public SDLGame {
+class PingPong: public SDLGame {
 
 public:
 	PingPong();

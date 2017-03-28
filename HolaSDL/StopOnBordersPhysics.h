@@ -3,7 +3,7 @@
 
 #include "PhysicsComponent.h"
 
-class StopOnBordersPhysics : public PhysicsComponent {
+class StopOnBordersPhysics: public PhysicsComponent {
 public:
 	StopOnBordersPhysics(bool left, bool right, bool top, bool bottom);
 	virtual ~StopOnBordersPhysics();

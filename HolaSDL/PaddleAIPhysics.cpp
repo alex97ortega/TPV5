@@ -2,7 +2,7 @@
 
 
 PaddleAIPhysics::PaddleAIPhysics(GameObject* ball) :
-ball_(ball) {
+		ball_(ball) {
 }
 
 PaddleAIPhysics::~PaddleAIPhysics() {

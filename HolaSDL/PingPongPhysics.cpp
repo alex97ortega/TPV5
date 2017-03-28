@@ -3,9 +3,9 @@
 #include "PingPongPhysics.h"
 
 PingPongPhysics::PingPongPhysics(GameObject* left_paddle,
-	GameObject* right_paddle) :
-	left_paddle_(left_paddle), right_paddle_(right_paddle), hits_(
-	0), speed_(0) {
+		GameObject* right_paddle) :
+		left_paddle_(left_paddle), right_paddle_(right_paddle), hits_(
+				0), speed_(0) {
 }
 
 PingPongPhysics::~PingPongPhysics() {

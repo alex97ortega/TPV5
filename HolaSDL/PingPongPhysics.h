@@ -5,7 +5,7 @@
 #include "BallObserver.h"
 #include "GameStateObserver.h"
 
-class PingPongPhysics : public PhysicsComponent, public GameStateObserver {
+class PingPongPhysics: public PhysicsComponent, public GameStateObserver {
 public:
 	PingPongPhysics(GameObject* left_paddle, GameObject* right_paddle);
 	virtual ~PingPongPhysics();

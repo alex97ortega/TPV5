@@ -3,7 +3,7 @@
 
 #include "InputComponent.h"
 
-class PaddleMouseInputComp : public InputComponent {
+class PaddleMouseInputComp: public InputComponent {
 public:
 	PaddleMouseInputComp();
 	virtual ~PaddleMouseInputComp();

@@ -1,7 +1,7 @@
 #ifndef MUSIC_H_
 #define MUSIC_H_
 
-#include <SDL2_mixer/SDL_mixer.h>
+#include <SDL_mixer.h>
 #include <string>
 
 class Music {

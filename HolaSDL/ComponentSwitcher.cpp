@@ -1,8 +1,8 @@
 #include "ComponentSwitcher.h"
 
 ComponentSwitcher::ComponentSwitcher(SDLGame* game, GameComponent* actor,
-	SDL_Keycode ctrlKey) :
-	GameObject(game), actor_(actor), ctrlKey_(ctrlKey) {
+		SDL_Keycode ctrlKey) :
+		GameObject(game), actor_(actor), ctrlKey_(ctrlKey) {
 }
 
 ComponentSwitcher::~ComponentSwitcher() {
@@ -15,8 +15,8 @@ void ComponentSwitcher::handleInput(const SDL_Event& event) {
 }
 
 void ComponentSwitcher::addMode(InputComponent* inputComp,
-	PhysicsComponent* physicsComp, RenderComponent* renderComp,
-	RenderComponent* modeRendered) {
+		PhysicsComponent* physicsComp, RenderComponent* renderComp,
+		RenderComponent* modeRendered) {
 }
 
 void ComponentSwitcher::setMode(int mode) {

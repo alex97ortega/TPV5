@@ -1,8 +1,8 @@
 #include "GameComponent.h"
 
 GameComponent::GameComponent(SDLGame* game) :
-GameObject(game), inputComp_(nullptr), physicsComp_(nullptr), renderComp_(
-nullptr) {
+		GameObject(game), inputComp_(nullptr), physicsComp_(nullptr), renderComp_(
+				nullptr) {
 }
 
 GameComponent::~GameComponent() {

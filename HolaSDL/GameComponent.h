@@ -6,7 +6,7 @@
 #include "PhysicsComponent.h"
 #include "RenderComponent.h"
 
-class GameComponent : public GameObject {
+class GameComponent: public GameObject {
 	InputComponent* inputComp_;
 	PhysicsComponent* physicsComp_;
 	RenderComponent* renderComp_;

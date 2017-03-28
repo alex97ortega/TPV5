@@ -1,14 +1,14 @@
 #ifndef PADDLEKEYBOARDINPUTCOMP_H_
 #define PADDLEKEYBOARDINPUTCOMP_H_
 
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include "InputComponent.h"
 
 
-class PaddleKeyboardInputComp : public InputComponent {
+class PaddleKeyboardInputComp: public InputComponent {
 public:
 	PaddleKeyboardInputComp(SDL_Keycode up_key, SDL_Keycode down_key,
-		SDL_Keycode stop_key, unsigned int velocity);
+			SDL_Keycode stop_key, unsigned int velocity);
 	virtual ~PaddleKeyboardInputComp();
 
 	// from InputComponent

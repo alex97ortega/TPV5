@@ -3,7 +3,7 @@
 
 #include "PhysicsComponent.h"
 
-class SimpleMovePhysics : public PhysicsComponent {
+class SimpleMovePhysics: public PhysicsComponent {
 public:
 	SimpleMovePhysics();
 	virtual ~SimpleMovePhysics();
