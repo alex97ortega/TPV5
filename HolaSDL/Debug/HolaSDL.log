@@ -1,9 +1,44 @@
-﻿Compilación iniciada a las 28/03/2017 16:59:46.
-     1>Proyecto "C:\hlocal\TPV5\HolaSDL\HolaSDL.vcxproj" en el nodo 2 (Build destinos).
-     1>Link:
-         HolaSDL.vcxproj -> C:\hlocal\TPV5\bin\HolaSDLDebug.exe
-     1>Compilación del proyecto terminada "C:\hlocal\TPV5\HolaSDL\HolaSDL.vcxproj" (Build destinos).
+﻿Build started 04/04/2017 17:15:24.
+     1>Project "C:\hlocal\Nueva carpeta\TPV5\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt PaddleKeyboardInputComp.cpp PaddleMouseInputComp.cpp PingPong.cpp main.cpp
+         PingPong.cpp
+         PaddleMouseInputComp.cpp
+         PaddleKeyboardInputComp.cpp
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         main.cpp
+       Link:
+         C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\Nueva carpeta\TPV5\bin\HolaSDLDebug.exe" /INCREMENTAL /NOLOGO SDL2_ttf.lib SDL2_mixer.lib SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\Nueva carpeta\TPV5\bin\HolaSDLDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\Nueva carpeta\TPV5\bin\HolaSDLDebug.lib" /MACHINE:X86 Debug\BallObserver.obj
+         Debug\BounceOnBorders.obj
+         Debug\ComponentSwitcher.obj
+         Debug\Font.obj
+         Debug\GameComponent.obj
+         Debug\GameManager.obj
+         Debug\GameObject.obj
+         Debug\GameStateObserver.obj
+         Debug\ImageRendered.obj
+         Debug\InputComponent.obj
+         Debug\main.obj
+         Debug\Music.obj
+         Debug\PaddleAIPhysics.obj
+         Debug\PaddleKeyboardInputComp.obj
+         Debug\PaddleMouseInputComp.obj
+         Debug\PhysicsComponent.obj
+         Debug\PingPong.obj
+         Debug\PingPongPhysics.obj
+         Debug\RectRender.obj
+         Debug\RenderComponent.obj
+         Debug\SDLGame.obj
+         Debug\SDLResources.obj
+         Debug\SimpleMovePhysics.obj
+         Debug\SoundEffect.obj
+         Debug\StopOnBordersPhysics.obj
+         Debug\Texture.obj
+         Debug\Vector2D.obj
+         HolaSDL.vcxproj -> C:\hlocal\Nueva carpeta\TPV5\bin\HolaSDLDebug.exe
+     1>Done Building Project "C:\hlocal\Nueva carpeta\TPV5\HolaSDL\HolaSDL.vcxproj" (Build target(s)).
 
-Compilación correcta.
+Build succeeded.
 
-Tiempo transcurrido 00:00:00.15
+Time Elapsed 00:00:01.19

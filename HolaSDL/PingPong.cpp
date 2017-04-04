@@ -2,6 +2,7 @@
 #include "BounceOnBorders.h"
 #include "RectRender.h"
 #include "ImageRendered.h"
+#include "PaddleKeyboardInputComp.h"
 
 PingPong::PingPong() :
 		SDLGame("Ping Pong", _WINDOW_WIDTH_, _WINDOW_HEIGHT_) {
@@ -65,6 +66,7 @@ void PingPong::initGame() {
 	actors_.push_back(right_paddle_);
 	actors_.push_back(ball_);
 	actors_.push_back(gameManager_);
+
 }
 
 void PingPong::closeGame() {
@@ -83,6 +85,7 @@ void PingPong::start() {
 		update();
 		render();
 		SDL_Delay(10);
+		
 	}
 }
 
@@ -99,8 +102,12 @@ void PingPong::update() {
 void PingPong::handleInput() {
 	SDL_Event event;
 	while (SDL_PollEvent(&event)) {
+
 		if (event.type == SDL_KEYDOWN) {
 			switch (event.key.keysym.sym) {
+			/*case SDLK_SPACE:
+				start();
+				break;*/
 			case SDLK_ESCAPE:
 				exit_ = true;
 				break;
@@ -115,6 +122,7 @@ void PingPong::handleInput() {
 				break;
 			}
 		}
+		
 		for (unsigned int i = 0; i < actors_.size(); i++) {
 			actors_[i]->handleInput(event);
 		}

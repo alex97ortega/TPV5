@@ -10,9 +10,21 @@ PaddleKeyboardInputComp::PaddleKeyboardInputComp(SDL_Keycode up_key,
 }
 
 void PaddleKeyboardInputComp::init(GameObject* paddle) {
+	velocity_ = 0;
 }
 
 void PaddleKeyboardInputComp::handleInput(SDL_Event event, GameObject* paddle) {
+
+	if (event.key.keysym.sym == up_key_){
+		velocity_ = 1;
+	}
+	else if (event.key.keysym.sym == down_key_){
+		velocity_ = -1;
+	}
+	else if (event.key.keysym.sym == stop_key_){
+		init(paddle);
+	}
+	paddle->setPositionY(velocity_);
 }
 
 PaddleKeyboardInputComp::~PaddleKeyboardInputComp() {

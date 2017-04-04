@@ -10,22 +10,29 @@ StopOnBordersPhysics::~StopOnBordersPhysics() {
 }
 
 void StopOnBordersPhysics::init(GameObject* o) {
+	//sonidico
 }
 
 
 void StopOnBordersPhysics::update(GameObject* o) {
-	
-	if (o->getPosition().getX() + o->getDirection().getX < 0 && left_){
+	if (top_ &&o->getPosition().getY() + o->getDirection().getY() <= 0) {
+		o->setPositionY(o->getPosition().getY());
+		o->setDirectionY(0);
+	}
+
+	else if (bottom_	&& o->getPosition().getY() + o->getDirection().getY() <=
+		o->getGame()->getWindowHeight() - o->getHeight()) {
+		o->setPositionY(o->getGame()->getWindowHeight() - o->getHeight());
+		o->setDirectionY(0);
+	}
+	if (left_ &&o->getPosition().getX() + o->getDirection().getX() <= 0) {
+		o->setPositionX(o->getPosition().getX());
 		o->setDirectionX(0);
-		o->setPositionX(o->getPosition().getX);
 	}
-	if (o->getPosition().getX() + o->getDirection().getX > 480 && right_){
 
-	}
-	if (o->getPosition().getY() + o->getDirection().getY() < 0 && top_){
-
-	}
-	if (o->getPosition().getY() + o->getDirection().getY() > 640 && bottom_){
-
+	else if (right_	&& o->getPosition().getX() + o->getDirection().getX() <=
+		o->getGame()->getWindowWidth() - o->getWidth()) {
+		o->setPositionX(o->getGame()->getWindowWidth() - o->getWidth());
+		o->setDirectionX(0);
 	}
 }
