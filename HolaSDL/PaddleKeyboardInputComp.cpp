@@ -1,4 +1,5 @@
 #include "PaddleKeyboardInputComp.h"
+#include "PhysicsComponent.h"
 
 PaddleKeyboardInputComp::PaddleKeyboardInputComp(SDL_Keycode up_key,
 		SDL_Keycode down_key, SDL_Keycode stop_key, unsigned int velocity) :
@@ -16,15 +17,16 @@ void PaddleKeyboardInputComp::init(GameObject* paddle) {
 void PaddleKeyboardInputComp::handleInput(SDL_Event event, GameObject* paddle) {
 
 	if (event.key.keysym.sym == up_key_){
-		velocity_ = 1;
+		velocity_ = -10;
 	}
 	else if (event.key.keysym.sym == down_key_){
-		velocity_ = -1;
+		velocity_ = 10;
 	}
 	else if (event.key.keysym.sym == stop_key_){
 		init(paddle);
 	}
-	paddle->setPositionY(velocity_);
+	paddle->setDirectionY(velocity_);	
+
 }
 
 PaddleKeyboardInputComp::~PaddleKeyboardInputComp() {

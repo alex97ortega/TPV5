@@ -15,24 +15,20 @@ void StopOnBordersPhysics::init(GameObject* o) {
 
 
 void StopOnBordersPhysics::update(GameObject* o) {
-	if (top_ &&o->getPosition().getY() + o->getDirection().getY() <= 0) {
-		o->setPositionY(o->getPosition().getY());
+
+	Vector2D<int> nextPos = o->getPosition() + o->getDirection();
+
+	if (top_ && nextPos.getY() <= 0) {
+		nextPos.setY(0);
+		o->setPosition(nextPos);
 		o->setDirectionY(0);
 	}
 
-	else if (bottom_	&& o->getPosition().getY() + o->getDirection().getY() <=
-		o->getGame()->getWindowHeight() - o->getHeight()) {
-		o->setPositionY(o->getGame()->getWindowHeight() - o->getHeight());
+	if (bottom_ && nextPos.getY() >= o->getGame()->getWindowHeight() - o->getHeight()) {
+		nextPos.setY(o->getGame()->getWindowHeight() - o->getHeight());
 		o->setDirectionY(0);
 	}
-	if (left_ &&o->getPosition().getX() + o->getDirection().getX() <= 0) {
-		o->setPositionX(o->getPosition().getX());
-		o->setDirectionX(0);
-	}
 
-	else if (right_	&& o->getPosition().getX() + o->getDirection().getX() <=
-		o->getGame()->getWindowWidth() - o->getWidth()) {
-		o->setPositionX(o->getGame()->getWindowWidth() - o->getWidth());
-		o->setDirectionX(0);
-	}
+
+	o->setPosition(nextPos);
 }

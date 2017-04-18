@@ -39,12 +39,18 @@ private:
 	GameManager* gameManager_;
 
 	PhysicsComponent* bounceOnBorderPhysics_;
+	PhysicsComponent* stopOnBorderPhysics_;
 	RenderComponent* rectangleRenderer_;
 	RenderComponent* imageRenderer_;
+	InputComponent* inputKeyComp_;
+	InputComponent* inputMouseComp_;
+
 
 	std::vector<GameObject*> actors_;
 
 	bool exit_;
+
+
 
 };
 

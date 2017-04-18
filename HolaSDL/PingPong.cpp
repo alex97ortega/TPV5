@@ -3,6 +3,8 @@
 #include "RectRender.h"
 #include "ImageRendered.h"
 #include "PaddleKeyboardInputComp.h"
+#include "PaddleMouseInputComp.h"
+#include "StopOnBordersPhysics.h"
 
 PingPong::PingPong() :
 		SDLGame("Ping Pong", _WINDOW_WIDTH_, _WINDOW_HEIGHT_) {
@@ -25,6 +27,12 @@ void PingPong::initGame() {
 	imageRenderer_ = new ImageRendered( getResources()->getTexture(SDLGame::TennisBall) );
 
 	bounceOnBorderPhysics_ = new BounceOnBorders(true, true, true, true);
+	stopOnBorderPhysics_ = new StopOnBordersPhysics(false, false, true, true);
+		;
+
+
+		inputKeyComp_ = new PaddleKeyboardInputComp(SDLK_UP, SDLK_DOWN, SDL_JOYSTICK_POWER_MEDIUM, 20);
+	inputMouseComp_ = new PaddleMouseInputComp();
 
 	// ball
 	ball_ = new GameComponent(this);
@@ -49,6 +57,7 @@ void PingPong::initGame() {
 			(getWindowHeight() - left_paddle_->getHeight()) / 2);
 	left_paddle_->setDirection(0, 0);
 	left_paddle_->setRenderComponent(rectangleRenderer_);
+	left_paddle_->setPhysicsComponent(stopOnBorderPhysics_);
 
 	// right paddle
 	right_paddle_ = new GameComponent(this);
@@ -58,6 +67,7 @@ void PingPong::initGame() {
 			(getWindowHeight() - right_paddle_->getHeight()) / 2);
 	right_paddle_->setDirection(0, 0);
 	right_paddle_->setRenderComponent(rectangleRenderer_);
+	right_paddle_->setPhysicsComponent(stopOnBorderPhysics_);
 
 	// game manager
 	gameManager_ = new GameManager(this);
@@ -103,14 +113,27 @@ void PingPong::handleInput() {
 	SDL_Event event;
 	while (SDL_PollEvent(&event)) {
 
+		left_paddle_->setInputComponent(inputKeyComp_);
+	//	left_paddle_->setInputComponent(inputMouseComp_);
 		if (event.type == SDL_KEYDOWN) {
 			switch (event.key.keysym.sym) {
-			/*case SDLK_SPACE:
+			case SDLK_SPACE:
 				start();
-				break;*/
+				break;
 			case SDLK_ESCAPE:
 				exit_ = true;
 				break;
+			case SDLK_UP:
+				left_paddle_->handleInput(event);
+
+				break;
+			case SDLK_DOWN:
+				left_paddle_->handleInput(event);
+				break;
+			/*case SDL_MOUSEMOTION:
+				left_paddle_->handleInput(event);
+				break;*/
+
 				// Pressing f to toggle fullscreen.
 			case SDLK_f:
 				int flags = SDL_GetWindowFlags(window_);
