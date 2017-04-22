@@ -15,6 +15,8 @@ void PingPongPhysics::init(GameObject* o) {
 }
 
 void PingPongPhysics::update(GameObject* o) {
+
+	o->setPosition(o->getPosition().getX() + o->getDirection().getX(), o->getPosition().getY() + o->getDirection().getY());
 }
 
 

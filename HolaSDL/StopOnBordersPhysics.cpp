@@ -29,6 +29,16 @@ void StopOnBordersPhysics::update(GameObject* o) {
 		o->setDirectionY(0);
 	}
 
+	if (left_ && nextPos.getX() <= 0) {
+		nextPos.setX(0);
+		o->setPosition(nextPos);
+		o->setDirectionX(0);
+	}
+
+	if (right_ && nextPos.getX() >= o->getGame()->getWindowWidth() - o->getWidth()) {
+		nextPos.setX(o->getGame()->getWindowWidth() - o->getWidth());
+		o->setDirectionX(0);
+	}
 
 	o->setPosition(nextPos);
 }

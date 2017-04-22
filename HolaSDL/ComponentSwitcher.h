@@ -13,7 +13,7 @@
 class ComponentSwitcher: public GameObject {
 public:
 
-	ComponentSwitcher(SDLGame* game, GameComponent* actor, SDL_Keycode ctrlKey);
+	ComponentSwitcher(SDLGame* game, GameComponent* actor, SDL_Keycode ctrlKey, RenderComponent* render, GameComponent* icon);
 	virtual ~ComponentSwitcher();
 
 	virtual void switchToNext();
@@ -27,9 +27,33 @@ public:
 	virtual void handleInput(const SDL_Event& event);
 	virtual void render();
 
+	enum MODE {
+		TECLADO, RATON, IA
+	};
+
+	int currentMode = TECLADO;
+
 private:
+
+	struct modos{
+		InputComponent* inputCompM;
+		PhysicsComponent* physicsCompM;
+		RenderComponent* renderCompM;
+		RenderComponent* modeRenderedM;
+	};
+	
+	modos modo;
+
+	std::vector <modos> inputComps;
+	GameComponent* Icon;
+	RenderComponent* Render;
+
 	GameComponent* actor_;
 	SDL_Keycode ctrlKey_;
+
+
+	
+
 
 };
 

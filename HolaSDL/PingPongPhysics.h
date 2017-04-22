@@ -22,14 +22,19 @@ public:
 	virtual void init(GameObject* o);
 	virtual void update(GameObject* o);
 
+	void bounceOnPaddle(GameObject* o, GameObject* paddle);
 
 private:
 	GameObject* left_paddle_;
 	GameObject* right_paddle_;
 
+	GameObject* ball_;
+
 	int hits_;
 	int speed_;
 
+	std::vector<BallObserver*> observer;
+	
 };
 
 #endif /* PINGPONGPHYSICS_H_ */

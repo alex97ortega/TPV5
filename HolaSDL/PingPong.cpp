@@ -5,6 +5,7 @@
 #include "PaddleKeyboardInputComp.h"
 #include "PaddleMouseInputComp.h"
 #include "StopOnBordersPhysics.h"
+#include "PaddleAIPhysics.h"
 
 PingPong::PingPong() :
 		SDLGame("Ping Pong", _WINDOW_WIDTH_, _WINDOW_HEIGHT_) {
@@ -25,15 +26,23 @@ void PingPong::initGame() {
 
 	rectangleRenderer_ = new RectRender(color);
 	imageRenderer_ = new ImageRendered( getResources()->getTexture(SDLGame::TennisBall) );
+	leftIconIMG = new ImageRendered(getResources()->getTexture(SDLGame::KeyBoardIcon));
+	rightIconIMG = new ImageRendered(getResources()->getTexture(SDLGame::KeyBoardIcon));
 
+
+	
 	bounceOnBorderPhysics_ = new BounceOnBorders(true, true, true, true);
 	stopOnBorderPhysics_ = new StopOnBordersPhysics(false, false, true, true);
-		;
+
+		
+	paddleAI = new PaddleAIPhysics(ball_);
 
 
-		inputKeyComp_ = new PaddleKeyboardInputComp(SDLK_UP, SDLK_DOWN, SDL_JOYSTICK_POWER_MEDIUM, 20);
+	inputKeyCompLeft_ = new PaddleKeyboardInputComp(SDLK_UP, SDLK_DOWN, SDLK_SPACE, 10);
+	inputKeyCompRight_ = new PaddleKeyboardInputComp(SDLK_a, SDLK_z, SDLK_s, 10);
 	inputMouseComp_ = new PaddleMouseInputComp();
 
+	
 	// ball
 	ball_ = new GameComponent(this);
 	ball_->setWidth(10);
@@ -56,8 +65,11 @@ void PingPong::initGame() {
 	left_paddle_->setPosition(30,
 			(getWindowHeight() - left_paddle_->getHeight()) / 2);
 	left_paddle_->setDirection(0, 0);
-	left_paddle_->setRenderComponent(rectangleRenderer_);
-	left_paddle_->setPhysicsComponent(stopOnBorderPhysics_);
+	//left_paddle_->setRenderComponent(rectangleRenderer_);
+	//left_paddle_->setPhysicsComponent(stopOnBorderPhysics_);
+	//left_paddle_->setInputComponent(inputMouseComp_);
+	
+
 
 	// right paddle
 	right_paddle_ = new GameComponent(this);
@@ -66,8 +78,32 @@ void PingPong::initGame() {
 	right_paddle_->setPosition(getWindowWidth() - 40,
 			(getWindowHeight() - right_paddle_->getHeight()) / 2);
 	right_paddle_->setDirection(0, 0);
-	right_paddle_->setRenderComponent(rectangleRenderer_);
-	right_paddle_->setPhysicsComponent(stopOnBorderPhysics_);
+	//right_paddle_->setRenderComponent(rectangleRenderer_);
+	//right_paddle_->setPhysicsComponent(stopOnBorderPhysics_);
+	//right_paddle_->setInputComponent(inputMouseComp_);
+
+
+
+	leftIcon = new GameComponent(this);
+	leftIcon->setHeight(50);
+	leftIcon->setWidth(50);
+	leftIcon->setPosition(25, 25);
+	player1 = new ComponentSwitcher(this, left_paddle_, SDLK_1, leftIconIMG, leftIcon);
+	player1->addMode(new PaddleKeyboardInputComp(SDLK_a, SDLK_z, SDLK_s, 10), new StopOnBordersPhysics(false, false, true, true), rectangleRenderer_, new ImageRendered(getResources()->getTexture(SDLGame::KeyBoardIcon)));
+	player1->addMode(new PaddleMouseInputComp(), new StopOnBordersPhysics(false, false, true, true), rectangleRenderer_, new ImageRendered(getResources()->getTexture(SDLGame::MouseIcon)));
+	player1->addMode(NULL, new PaddleAIPhysics(ball_), rectangleRenderer_, new ImageRendered(getResources()->getTexture(SDLGame::AIIcon)));
+	player1->setMode(player1->currentMode);
+
+
+	rightIcon = new GameComponent(this);
+	rightIcon->setWidth(50);
+	rightIcon->setHeight(50);
+	rightIcon->setPosition(getWindowWidth() - rightIcon->getWidth() - 25, 25);
+	player2 = new ComponentSwitcher(this, right_paddle_, SDLK_2, rightIconIMG, rightIcon);
+	player2->addMode(new PaddleKeyboardInputComp(SDLK_UP, SDLK_DOWN, SDLK_SPACE, 10), new StopOnBordersPhysics(false, false, true, true), rectangleRenderer_, new ImageRendered(getResources()->getTexture(SDLGame::KeyBoardIcon)));
+	player2->addMode(new PaddleMouseInputComp(), new StopOnBordersPhysics(false, false, true, true), rectangleRenderer_, new ImageRendered(getResources()->getTexture(SDLGame::MouseIcon)));
+	player2->addMode(NULL, new PaddleAIPhysics(ball_), rectangleRenderer_, new ImageRendered(getResources()->getTexture(SDLGame::AIIcon)));
+	player2->setMode(player2->currentMode);
 
 	// game manager
 	gameManager_ = new GameManager(this);
@@ -76,6 +112,8 @@ void PingPong::initGame() {
 	actors_.push_back(right_paddle_);
 	actors_.push_back(ball_);
 	actors_.push_back(gameManager_);
+	actors_.push_back(player1);
+	actors_.push_back(player2);
 
 }
 
@@ -113,8 +151,7 @@ void PingPong::handleInput() {
 	SDL_Event event;
 	while (SDL_PollEvent(&event)) {
 
-		left_paddle_->setInputComponent(inputKeyComp_);
-	//	left_paddle_->setInputComponent(inputMouseComp_);
+	
 		if (event.type == SDL_KEYDOWN) {
 			switch (event.key.keysym.sym) {
 			case SDLK_SPACE:
@@ -123,17 +160,6 @@ void PingPong::handleInput() {
 			case SDLK_ESCAPE:
 				exit_ = true;
 				break;
-			case SDLK_UP:
-				left_paddle_->handleInput(event);
-
-				break;
-			case SDLK_DOWN:
-				left_paddle_->handleInput(event);
-				break;
-			/*case SDL_MOUSEMOTION:
-				left_paddle_->handleInput(event);
-				break;*/
-
 				// Pressing f to toggle fullscreen.
 			case SDLK_f:
 				int flags = SDL_GetWindowFlags(window_);

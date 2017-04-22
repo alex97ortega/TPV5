@@ -3,6 +3,7 @@
 
 #include "PhysicsComponent.h"
 
+
 class PaddleAIPhysics : public PhysicsComponent {
 public:
 	PaddleAIPhysics();
@@ -13,8 +14,13 @@ public:
 	virtual void init(GameObject* paddle);
 	virtual void update(GameObject* paddle);
 
+	void goCenter(GameObject* paddle, int velocity);
+	void predicDirection(GameObject* paddle, int velocity);
+
 private:
 	GameObject* ball_;
+	int i = 0;
 };
+
 
 #endif /* PADDLEAIPHYSICS_H_ */
