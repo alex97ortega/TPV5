@@ -21,6 +21,15 @@ GameManager::GameManager(SDLGame* game) :
 }
 
 GameManager::~GameManager() {
+	font_ = nullptr;
+
+	wallHit = nullptr;
+	paddleHit = nullptr;
+
+	delete font_;
+
+	delete wallHit;
+	delete paddleHit;
 }
 
 void GameManager::update() {

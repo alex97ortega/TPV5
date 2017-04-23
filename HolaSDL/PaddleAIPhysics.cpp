@@ -5,6 +5,7 @@ ball_(ball) {
 }
 
 PaddleAIPhysics::~PaddleAIPhysics() {
+	delete ball_;
 }
 
 void PaddleAIPhysics::init(GameObject* paddle) {

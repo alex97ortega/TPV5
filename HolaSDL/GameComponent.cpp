@@ -6,6 +6,13 @@ GameComponent::GameComponent(SDLGame* game) :
 }
 
 GameComponent::~GameComponent() {
+	inputComp_ = nullptr;
+	physicsComp_ = nullptr;
+    renderComp_ = nullptr;
+
+	delete inputComp_;
+	delete physicsComp_;
+	delete renderComp_;
 }
 
 void GameComponent::update() {

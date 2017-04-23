@@ -122,12 +122,53 @@ void PingPong::initGame() {
 }
 
 void PingPong::closeGame() {
+	right_paddle_ = nullptr;
+	left_paddle_ = nullptr;
+	ball_ = nullptr;
+	leftIcon = nullptr;
+	rightIcon = nullptr;
+
+	gameManager_ = nullptr;
+
+	rectangleRenderer_ = nullptr;
+	imageRenderer_ = nullptr;
+
+	bounceOnBorderPhysics_ = nullptr;
+	stopOnBorderPhysics_ = nullptr;
+	paddleAI = nullptr;
+	pingpong = nullptr;
+
+
+	inputKeyCompLeft_ = nullptr;
+	inputKeyCompRight_ = nullptr;
+	inputMouseComp_ = nullptr;
+
+	player1;
+	player2;
+
 	delete right_paddle_;
 	delete left_paddle_;
 	delete ball_;
+	delete leftIcon;
+	delete rightIcon;
+
+	delete gameManager_;
+
 	delete rectangleRenderer_;
 	delete imageRenderer_;
+
 	delete bounceOnBorderPhysics_;
+	delete stopOnBorderPhysics_;
+	delete paddleAI;
+	delete pingpong;
+
+
+	delete inputKeyCompLeft_;
+	delete inputKeyCompRight_;
+	delete inputMouseComp_;
+
+	delete player1;
+	delete player2;
 }
 
 void PingPong::start() {

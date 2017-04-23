@@ -9,6 +9,15 @@ PingPongPhysics::PingPongPhysics(GameObject* left_paddle,
 }
 
 PingPongPhysics::~PingPongPhysics() {
+	left_paddle_ = nullptr;
+	right_paddle_ = nullptr;
+
+	ball_ = nullptr;
+
+	delete left_paddle_;
+	delete right_paddle_;
+
+	delete ball_;
 }
 
 void PingPongPhysics::init(GameObject* o) {

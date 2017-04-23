@@ -6,6 +6,15 @@ ComponentSwitcher::ComponentSwitcher(SDLGame* game, GameComponent* actor,
 }
 
 ComponentSwitcher::~ComponentSwitcher() {
+	Icon = nullptr;
+	Render = nullptr;
+
+	actor_ = nullptr;
+
+	delete Icon;
+	delete Render;
+
+	delete actor_;
 }
 
 void ComponentSwitcher::update() {

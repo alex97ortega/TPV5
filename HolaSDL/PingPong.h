@@ -68,9 +68,6 @@ private:
 	std::vector<GameObject*> actors_;
 
 	bool exit_;
-
-
-
 };
 
 #endif /* PINGPONG_H_ */
