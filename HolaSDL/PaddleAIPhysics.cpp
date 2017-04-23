@@ -8,9 +8,9 @@ PaddleAIPhysics::~PaddleAIPhysics() {
 }
 
 void PaddleAIPhysics::init(GameObject* paddle) {
-	 if (i < 1){
+	 if (i < 2){
 		paddle->setPositionY(paddle->getGame()->getWindowHeight() / 2);
-		i = 2;
+		i++;
 	}
 }
 
@@ -60,18 +60,18 @@ void PaddleAIPhysics::update(GameObject* paddle) {
 		if (ball_->getDirection().getX() < 0){
 
 			if (paddle->getPosition().getY() > paddle->getGame()->getWindowHeight() / 2){
-				paddle->setDirectionY(-8);
+				paddle->setDirectionY(-2);
 				paddle->setPositionY(paddle->getPosition().getY() + paddle->getDirection().getY());
 			}
 			else if (paddle->getPosition().getY() < paddle->getGame()->getWindowHeight() / 2){
-				paddle->setDirectionY(8);
+				paddle->setDirectionY(2);
 				paddle->setPositionY(paddle->getPosition().getY() + paddle->getDirection().getY());
 			}
 		}
 		/*****la bola va hacia un lado u otro********/
 		else{
 			if (ball_->getPosition().getY() < paddle->getPosition().getY()){
-				paddle->setDirectionY(-8);
+				paddle->setDirectionY(-5);
 				paddle->setPositionY(paddle->getPosition().getY() + paddle->getDirection().getY());
 
 				if (paddle->getPosition().getY() + paddle->getDirection().getY() <= 0){
@@ -81,7 +81,7 @@ void PaddleAIPhysics::update(GameObject* paddle) {
 			}
 			/********parte de arriba o de abajo***********/
 			else if (ball_->getPosition().getY() > paddle->getPosition().getY()){
-				paddle->setDirectionY(8);
+				paddle->setDirectionY(5);
 				paddle->setPositionY(paddle->getPosition().getY() + paddle->getDirection().getY());
 
 				if (((paddle->getPosition().getY() + paddle->getHeight()) + paddle->getDirection().getY()) >= paddle->getGame()->getWindowHeight()){
