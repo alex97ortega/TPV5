@@ -6,6 +6,7 @@
 #include "PaddleMouseInputComp.h"
 #include "StopOnBordersPhysics.h"
 #include "PaddleAIPhysics.h"
+#include "PingPongPhysics.h"
 
 PingPong::PingPong() :
 		SDLGame("Ping Pong", _WINDOW_WIDTH_, _WINDOW_HEIGHT_) {
@@ -33,10 +34,9 @@ void PingPong::initGame() {
 	
 	bounceOnBorderPhysics_ = new BounceOnBorders(true, true, true, true);
 	stopOnBorderPhysics_ = new StopOnBordersPhysics(false, false, true, true);
-
-		
 	paddleAI = new PaddleAIPhysics(ball_);
 
+	
 
 	inputKeyCompLeft_ = new PaddleKeyboardInputComp(SDLK_UP, SDLK_DOWN, SDLK_SPACE, 10);
 	inputKeyCompRight_ = new PaddleKeyboardInputComp(SDLK_a, SDLK_z, SDLK_s, 10);
@@ -47,15 +47,14 @@ void PingPong::initGame() {
 	ball_ = new GameComponent(this);
 	ball_->setWidth(10);
 	ball_->setHeight(10);
-	ball_->setDirection( (rand() % 5)+3, (rand()%5)+3); // change to  (0,0) at the end
+	ball_->setDirection( 0,0); // change to  (0,0) at the end
 	ball_->setPosition(
 			ball_->getGame()->getWindowWidth() / 2 - ball_->getWidth() / 2,
 			ball_->getGame()->getWindowHeight() / 2 - ball_->getHeight() / 2);
-	ball_->setPhysicsComponent(bounceOnBorderPhysics_);
-	ball_->setRenderComponent(rectangleRenderer_);
-
+	//ball_->setPhysicsComponent(bounceOnBorderPhysics_);
+	//ball_->setRenderComponent(rectangleRenderer_);
 	// use the following for an image of a tennis ball
-	// ball_->setRenderComponent(imageRenderer_);
+	 ball_->setRenderComponent(imageRenderer_);
 
 
 	// left paddle
@@ -82,6 +81,7 @@ void PingPong::initGame() {
 	//right_paddle_->setPhysicsComponent(stopOnBorderPhysics_);
 	//right_paddle_->setInputComponent(inputMouseComp_);
 
+	pingpong = new PingPongPhysics(left_paddle_, right_paddle_, ball_);
 
 
 	leftIcon = new GameComponent(this);
@@ -107,6 +107,10 @@ void PingPong::initGame() {
 
 	// game manager
 	gameManager_ = new GameManager(this);
+
+	pingpong->resgisterBallObserver(gameManager_);
+	gameManager_->registerGameStateObserver(pingpong);
+	ball_->setPhysicsComponent(pingpong);
 
 	actors_.push_back(left_paddle_);
 	actors_.push_back(right_paddle_);
@@ -154,9 +158,7 @@ void PingPong::handleInput() {
 	
 		if (event.type == SDL_KEYDOWN) {
 			switch (event.key.keysym.sym) {
-			case SDLK_SPACE:
-				start();
-				break;
+			
 			case SDLK_ESCAPE:
 				exit_ = true;
 				break;

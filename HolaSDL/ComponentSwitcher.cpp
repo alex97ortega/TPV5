@@ -38,13 +38,10 @@ void ComponentSwitcher::setMode(int mode) {
 
 void ComponentSwitcher::switchToNext() {
 	if (currentMode == IA){
-
 		currentMode = TECLADO;
 		setMode(currentMode);
 	}
-
 	else{
-
 		currentMode += 1;
 		setMode(currentMode);
 	}

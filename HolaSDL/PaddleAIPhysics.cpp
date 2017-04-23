@@ -20,11 +20,11 @@ void PaddleAIPhysics::update(GameObject* paddle) {
 
 		if (ball_->getDirection().getX() > 0){
 
-			while (paddle->getPosition().getY() > paddle->getGame()->getWindowHeight() / 2){
+			if (paddle->getPosition().getY() > paddle->getGame()->getWindowHeight() / 2){
 				paddle->setDirectionY(-1);
 				paddle->setPositionY(paddle->getPosition().getY() + paddle->getDirection().getY());
 			}
-			while (paddle->getPosition().getY() < paddle->getGame()->getWindowHeight() / 2){
+			else if (paddle->getPosition().getY() < paddle->getGame()->getWindowHeight() / 2){
 				paddle->setDirectionY(1);
 				paddle->setPositionY(paddle->getPosition().getY() + paddle->getDirection().getY());
 			}
@@ -59,11 +59,11 @@ void PaddleAIPhysics::update(GameObject* paddle) {
 
 		if (ball_->getDirection().getX() < 0){
 
-			while (paddle->getPosition().getY() > paddle->getGame()->getWindowHeight() / 2){
+			if (paddle->getPosition().getY() > paddle->getGame()->getWindowHeight() / 2){
 				paddle->setDirectionY(-8);
 				paddle->setPositionY(paddle->getPosition().getY() + paddle->getDirection().getY());
 			}
-			while (paddle->getPosition().getY() < paddle->getGame()->getWindowHeight() / 2){
+			else if (paddle->getPosition().getY() < paddle->getGame()->getWindowHeight() / 2){
 				paddle->setDirectionY(8);
 				paddle->setPositionY(paddle->getPosition().getY() + paddle->getDirection().getY());
 			}
