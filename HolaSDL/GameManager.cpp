@@ -1,11 +1,11 @@
-#include <string>
+﻿#include <string>
 #include <cmath>
 #include <random>
 
 #include "GameManager.h"
 
 
-GameManager::GameManager(SDLGame* game) :
+GameManager::GameManager(SDLGame* game, GameObject* l, GameObject* r) :
 		GameObject(game) {
 	font_ = game_->getResources()->getFont(SDLGame::NESChimera16);
 
@@ -18,6 +18,9 @@ GameManager::GameManager(SDLGame* game) :
 
 	wallHit = game->getResources()->getSoundEffect(SDLGame::Wall_Hit);
 	paddleHit = game->getResources()->getSoundEffect(SDLGame::Paddle_Hit);
+
+	palaGuapa1 = l;
+	palaGuapisima2 = r;
 }
 
 GameManager::~GameManager() {
@@ -26,10 +29,17 @@ GameManager::~GameManager() {
 	wallHit = nullptr;
 	paddleHit = nullptr;
 
+	palaGuapa1 = nullptr;
+	palaGuapisima2 = nullptr;
+
+
 	delete font_;
 
 	delete wallHit;
 	delete paddleHit;
+
+	delete palaGuapa1;
+	delete palaGuapisima2;
 }
 
 void GameManager::update() {
@@ -74,6 +84,7 @@ void GameManager::render() {
 }
 
 void GameManager::onCollision(GameObject* ball, GameObject* o) {
+	last_paddle_hit_​ = o;
 	paddleHit->play();
 }
 
@@ -95,6 +106,7 @@ void GameManager::onBorderExit(GameObject* ball, BallObserver::EXIT_SIDE side) {
 				jugar = false;
 				leftScore = 0;
 				rightScore = 0;
+				last_paddle_hit_​ = nullptr;
 			}
 		}
 		else {
@@ -115,6 +127,7 @@ void GameManager::onBorderExit(GameObject* ball, BallObserver::EXIT_SIDE side) {
 				jugar = false;
 				leftScore = 0;
 				rightScore = 0;
+				last_paddle_hit_​ = nullptr;
 			}
 		}
 		else{

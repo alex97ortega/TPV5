@@ -1,2 +1,9 @@
-﻿  HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\TPV5\bin\HolaSDLDebug.exe
-  HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\TPV5\bin\HolaSDLDebug.pdb (Full PDB)
+﻿Build started 25/04/2017 17:05:57.
+     1>Project "C:\hlocal\TPV5\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         HolaSDL.vcxproj -> C:\hlocal\TPV5\bin\HolaSDLDebug.exe
+     1>Done Building Project "C:\hlocal\TPV5\HolaSDL\HolaSDL.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.04

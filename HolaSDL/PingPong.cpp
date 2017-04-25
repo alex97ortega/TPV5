@@ -106,7 +106,7 @@ void PingPong::initGame() {
 	player2->setMode(player2->currentMode);
 
 	// game manager
-	gameManager_ = new GameManager(this);
+	gameManager_ = new GameManager(this, left_paddle_, right_paddle_);
 
 	pingpong->resgisterBallObserver(gameManager_);
 	gameManager_->registerGameStateObserver(pingpong);
@@ -143,8 +143,8 @@ void PingPong::closeGame() {
 	inputKeyCompRight_ = nullptr;
 	inputMouseComp_ = nullptr;
 
-	player1;
-	player2;
+	player1 = nullptr;
+	player2 = nullptr;
 
 	delete right_paddle_;
 	delete left_paddle_;

@@ -1,4 +1,4 @@
-#ifndef SCOREBOARD_H_
+﻿#ifndef SCOREBOARD_H_
 #define SCOREBOARD_H_
 
 #include "SDLGame.h"
@@ -11,7 +11,7 @@
 class GameManager: public GameObject, public BallObserver {
 
 public:
-	GameManager(SDLGame* game);
+	GameManager(SDLGame* game, GameObject* leftPaddle, GameObject* rightPaddle);
 	virtual ~GameManager();
 
 	virtual void registerGameStateObserver(GameStateObserver* o);
@@ -42,6 +42,11 @@ private:
 
 	SoundEffect* wallHit;
 	SoundEffect* paddleHit;
+
+	GameObject* palaGuapa1;
+	GameObject* palaGuapisima2; // victor es un vago de mierda y un borracho heliocentrista 25/04/2017
+
+	GameObject* last_paddle_hit_​; // atributo guapisimo
 
 	bool jugar= false;
 

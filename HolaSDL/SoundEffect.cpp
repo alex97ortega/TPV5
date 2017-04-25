@@ -1,6 +1,6 @@
 #include "SoundEffect.h"
 
-SoundEffect::SoundEffect() :
+SoundEffect::SoundEffect() : 
 		chunck_(nullptr) {
 
 }
