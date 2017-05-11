@@ -5,8 +5,7 @@
 #include "GameManager.h"
 
 
-GameManager::GameManager(SDLGame* game, GameObject* l, GameObject* r) :
-		GameObject(game) {
+GameManager::GameManager(SDLGame* game, GameObject* l, GameObject* r) :GameObject(game) {
 	font_ = game_->getResources()->getFont(SDLGame::NESChimera16);
 
 	color = { 255, 255, 255, 255 };
@@ -19,8 +18,8 @@ GameManager::GameManager(SDLGame* game, GameObject* l, GameObject* r) :
 	wallHit = game->getResources()->getSoundEffect(SDLGame::Wall_Hit);
 	paddleHit = game->getResources()->getSoundEffect(SDLGame::Paddle_Hit);
 
-	palaGuapa1 = l;
-	palaGuapisima2 = r;
+	palaL = l;
+	palaR = r;
 }
 
 GameManager::~GameManager() {
@@ -29,8 +28,8 @@ GameManager::~GameManager() {
 	wallHit = nullptr;
 	paddleHit = nullptr;
 
-	palaGuapa1 = nullptr;
-	palaGuapisima2 = nullptr;
+	palaL = nullptr;
+	palaR = nullptr;
 
 
 	delete font_;
@@ -38,11 +37,12 @@ GameManager::~GameManager() {
 	delete wallHit;
 	delete paddleHit;
 
-	delete palaGuapa1;
-	delete palaGuapisima2;
+	delete palaL;
+	delete palaR;
 }
 
 void GameManager::update() {
+
 }
 
 void GameManager::handleInput(const SDL_Event& event) {
@@ -145,4 +145,14 @@ void GameManager::onBorderExit(GameObject* ball, BallObserver::EXIT_SIDE side) {
 void GameManager::registerGameStateObserver(GameStateObserver* o) {
 	observers.push_back(o);
 	nObservers++;
+}
+
+
+void GameManager::onObstacleCollision(GameObject* obs, GameObject* o){
+
+}
+
+void GameManager::onObstacleStateChange(GameObject* obs, bool state){
+
+
 }

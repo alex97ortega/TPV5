@@ -1,9 +1,66 @@
-﻿Build started 25/04/2017 17:05:57.
-     1>Project "C:\hlocal\TPV5\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         HolaSDL.vcxproj -> C:\hlocal\TPV5\bin\HolaSDLDebug.exe
-     1>Done Building Project "C:\hlocal\TPV5\HolaSDL\HolaSDL.vcxproj" (Build target(s)).
+﻿Compilación iniciada a las 11/05/2017 11:04:36.
+     1>Proyecto "D:\TPV\practica6\TPV5\HolaSDL\HolaSDL.vcxproj" en el nodo 2 (Build destinos).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BallObserver.cpp BounceOnBorders.cpp ComponentSwitcher.cpp Font.cpp GameComponent.cpp GameManager.cpp GameObject.cpp GameStateObserver.cpp ImageRendered.cpp InputComponent.cpp main.cpp Music.cpp PaddleAIPhysics.cpp PaddleKeyboardInputComp.cpp PaddleMouseInputComp.cpp PhysicsComponent.cpp PingPong.cpp PingPongPhysics.cpp RectRender.cpp RenderComponent.cpp SDLGame.cpp SDLResources.cpp SimpleMovePhysics.cpp SoundEffect.cpp StopOnBordersPhysics.cpp Texture.cpp TimedObstacle.cpp Vector2D.cpp
+         Vector2D.cpp
+         TimedObstacle.cpp
+     1>d:\tpv\practica6\tpv5\holasdl\timedobstacle.cpp(5): error C2259: TimedObstacle' : no se puede crear una instancia de una clase abstract
+                 debido a los siguientes miembros:
+                 'void GameObject::handleInput(const SDL_Event &)' : es abstracto
+                 d:\tpv\practica6\tpv5\holasdl\gameobject.h(54) : vea la declaración de 'GameObject::handleInput'
+                 'void GameObject::update(void)' : es abstracto
+                 d:\tpv\practica6\tpv5\holasdl\gameobject.h(55) : vea la declaración de 'GameObject::update'
+                 'void GameObject::render(void)' : es abstracto
+                 d:\tpv\practica6\tpv5\holasdl\gameobject.h(56) : vea la declaración de 'GameObject::render'
+                 'void GameStateObserver::onGameStart(void)' : es abstracto
+                 d:\tpv\practica6\tpv5\holasdl\gamestateobserver.h(9) : vea la declaración de 'GameStateObserver::onGameStart'
+                 'void GameStateObserver::onGameOver(void)' : es abstracto
+                 d:\tpv\practica6\tpv5\holasdl\gamestateobserver.h(10) : vea la declaración de 'GameStateObserver::onGameOver'
+                 'void GameStateObserver::onRoundStart(void)' : es abstracto
+                 d:\tpv\practica6\tpv5\holasdl\gamestateobserver.h(11) : vea la declaración de 'GameStateObserver::onRoundStart'
+                 'void GameStateObserver::onRoundOver(void)' : es abstracto
+                 d:\tpv\practica6\tpv5\holasdl\gamestateobserver.h(12) : vea la declaración de 'GameStateObserver::onRoundOver'
+     1>d:\tpv\practica6\tpv5\holasdl\timedobstacle.cpp(5): error C2556: 'TimedObstacle::TimedObstacle(SDLGame *,int,int,GameObject *)' : la función sobrecargada sólo se diferencia de 'TimedObstacle::TimedObstacle(SDLGame *,int,int,GameObject *)' por el tipo de valor devuelto
+                 d:\tpv\practica6\tpv5\holasdl\timedobstacle.h(12) : vea la declaración de 'TimedObstacle::TimedObstacle'
+     1>d:\tpv\practica6\tpv5\holasdl\timedobstacle.cpp(5): error C2512: 'GameObject' : no hay disponible un constructor predeterminado adecuado
+         Texture.cpp
+         StopOnBordersPhysics.cpp
+         SoundEffect.cpp
+         SimpleMovePhysics.cpp
+         SDLResources.cpp
+         SDLGame.cpp
+     1>d:\tpv\practica6\tpv5\holasdl\sdlgame.cpp(61): warning C4244: 'argumento' : conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+         RenderComponent.cpp
+         RectRender.cpp
+         PingPongPhysics.cpp
+     1>d:\tpv\practica6\tpv5\holasdl\pingpongphysics.cpp(76): warning C4244: 'inicializando' : conversión de 'double' a 'int'; posible pérdida de datos
+     1>d:\tpv\practica6\tpv5\holasdl\pingpongphysics.cpp(77): warning C4244: 'inicializando' : conversión de 'double' a 'int'; posible pérdida de datos
+     1>d:\tpv\practica6\tpv5\holasdl\pingpongphysics.cpp(103): warning C4244: 'inicializando' : conversión de 'double' a 'int'; posible pérdida de datos
+     1>d:\tpv\practica6\tpv5\holasdl\pingpongphysics.cpp(104): warning C4244: 'inicializando' : conversión de 'double' a 'int'; posible pérdida de datos
+     1>d:\tpv\practica6\tpv5\holasdl\pingpongphysics.cpp(136): warning C4244: 'inicializando' : conversión de 'double' a 'int'; posible pérdida de datos
+     1>d:\tpv\practica6\tpv5\holasdl\pingpongphysics.cpp(137): warning C4244: 'inicializando' : conversión de 'double' a 'int'; posible pérdida de datos
+         PingPong.cpp
+         PhysicsComponent.cpp
+         PaddleMouseInputComp.cpp
+         PaddleKeyboardInputComp.cpp
+         PaddleAIPhysics.cpp
+         Music.cpp
+         main.cpp
+         InputComponent.cpp
+         ImageRendered.cpp
+         Generando código...
+         Compilando...
+         GameStateObserver.cpp
+         GameObject.cpp
+         GameManager.cpp
+         GameComponent.cpp
+         Font.cpp
+         ComponentSwitcher.cpp
+         BounceOnBorders.cpp
+         BallObserver.cpp
+         Generando código...
+     1>Compilación del proyecto terminada "D:\TPV\practica6\TPV5\HolaSDL\HolaSDL.vcxproj" (Build destinos) -- ERROR.
 
-Build succeeded.
+ERROR al compilar.
 
-Time Elapsed 00:00:00.04
+Tiempo transcurrido 00:00:09.00

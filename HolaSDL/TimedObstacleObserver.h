@@ -9,6 +9,7 @@ public:
 	virtual ~TimedObstacleObserver();
 	virtual void onObstacleStateChange(GameObject* obs, bool state) = 0;
 	virtual void onObstacleCollision(GameObject* obs, GameObject* o) = 0;
-};
+};
+
 
 #endif
