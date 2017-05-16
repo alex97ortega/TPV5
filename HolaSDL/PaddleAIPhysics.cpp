@@ -17,7 +17,7 @@ void PaddleAIPhysics::init(GameObject* paddle) {
 
 void PaddleAIPhysics::update(GameObject* paddle) {
 
-	if (ball_->getPosition().getX() - paddle->getPosition().getX() > 0){
+	if (ball_->getPosition().getX() - paddle->getPosition().getX() > 0){ //pala izq
 
 		if (ball_->getDirection().getX() > 0){
 
@@ -56,7 +56,7 @@ void PaddleAIPhysics::update(GameObject* paddle) {
 
 	/*********una u otra pala*******/
 
-	else if (ball_->getPosition().getX() - paddle->getPosition().getX() < 0){
+	else if (ball_->getPosition().getX() - paddle->getPosition().getX() < 0){ //pala drcha
 
 		if (ball_->getDirection().getX() < 0){
 

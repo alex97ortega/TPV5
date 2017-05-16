@@ -9,8 +9,9 @@ TimedObstacle::TimedObstacle(SDLGame* game, int pTime, int dTime, GameObject* ba
 
 	estado = false;
 	gaming = true;
+	SDL_Color c = { 255, 255, 255, 255 };
 
-	rend = new RectRender({ 255, 255, 255, 255 });
+	rend = new RectRender(c);
 
 	bola = ball;
 }
@@ -56,7 +57,7 @@ void TimedObstacle::Fdtime(){
 	}
 }
 
-void TimedObstacle::update(GameObject* o){
+void TimedObstacle::update(){
 	if (gaming){
 		SDL_AddTimer(ptime, ptimeFunc, this);
 		gaming = false;
@@ -67,10 +68,10 @@ void TimedObstacle::update(GameObject* o){
 	}
 
 	if (this->getPosition().getX() <= bola->getPosition().getX() && this->getPosition().getX() >= bola->getPosition().getX() + bola->getWidth() &&
-		this->getPosition().getY() <= bola->getPosition().getY() && this->getPosition().getY() >= bola->getPosition().getY() + bola->getHeight){
+		this->getPosition().getY() <= bola->getPosition().getY() && this->getPosition().getY() >= bola->getPosition().getY() + bola->getHeight()){
 		estado = false;
 		for (int i = 0; i < nObbservers; i++){
-			observers[i]->onObstacleCollision(this, o);
+			observers[i]->onObstacleCollision(this, bola);
 		}
 	}
 }

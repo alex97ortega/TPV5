@@ -10,7 +10,7 @@
 #include "TimedObstacleObserver.h"
 
 
-class GameManager: public GameObject, public BallObserver, public TimedObstacleObserver {
+class GameManager: public GameObject, public BallObserver {
 
 public:
 	GameManager(SDLGame* game, GameObject* leftPaddle, GameObject* rightPaddle);

@@ -25,6 +25,8 @@ void PingPong::initGame() {
 
 	SDL_Color color = { 255, 255, 255, 255 };
 
+
+
 	rectangleRenderer_ = new RectRender(color);
 	imageRenderer_ = new ImageRendered( getResources()->getTexture(SDLGame::TennisBall) );
 	leftIconIMG = new ImageRendered(getResources()->getTexture(SDLGame::KeyBoardIcon));
@@ -111,6 +113,8 @@ void PingPong::initGame() {
 	pingpong->resgisterBallObserver(gameManager_);
 	gameManager_->registerGameStateObserver(pingpong);
 	ball_->setPhysicsComponent(pingpong);
+	
+	tim = new TimedObstacle(this, 5, 3, ball_);
 
 	actors_.push_back(left_paddle_);
 	actors_.push_back(right_paddle_);
@@ -118,6 +122,9 @@ void PingPong::initGame() {
 	actors_.push_back(gameManager_);
 	actors_.push_back(player1);
 	actors_.push_back(player2);
+	actors_.push_back(tim);
+
+	
 
 }
 

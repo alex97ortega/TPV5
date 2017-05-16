@@ -149,7 +149,7 @@ void GameManager::registerGameStateObserver(GameStateObserver* o) {
 
 
 void GameManager::onObstacleCollision(GameObject* obs, GameObject* o){
-
+	obs->update(); o->update();
 }
 
 void GameManager::onObstacleStateChange(GameObject* obs, bool state){
