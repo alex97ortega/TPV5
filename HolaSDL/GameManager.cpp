@@ -5,7 +5,7 @@
 #include "GameManager.h"
 
 
-GameManager::GameManager(SDLGame* game, GameObject* l, GameObject* r) :GameObject(game) {
+GameManager::GameManager(SDLGame* game, GameObject* l, GameObject* r) : GameObject(game) {
 	font_ = game_->getResources()->getFont(SDLGame::NESChimera16);
 
 	color = { 255, 255, 255, 255 };
@@ -70,6 +70,7 @@ void GameManager::handleInput(const SDL_Event& event) {
 void GameManager::render() {
 
 	// just an example, should be adjusted to the requirements!
+	
 	if (!jugar)
 		startMsgTexture_.render(getGame()->getRenderer(), (getGame()->getWindowWidth()-startMsgTexture_.getWidth()) / 2, getGame()->getWindowHeight()-40);
 
@@ -80,6 +81,19 @@ void GameManager::render() {
 	if (!jugar && !jugando){
 		winnerT.loadFromText(getGame()->getRenderer(),winner, *font_, color);
 		winnerT.render(getGame()->getRenderer(), (getGame()->getWindowWidth() - winnerT.getWidth()) / 2, getGame()->getWindowHeight() / 2);
+	}
+
+	SDL_SetRenderDrawColor(game_->getRenderer(), 255, 255, 255, SDL_ALPHA_OPAQUE);
+	if (paredR){
+		SDL_Rect rect =
+		{ getGame()->getWindowWidth() - 10, 0, 10, getGame()->getWindowHeight() };
+		SDL_RenderFillRect(game_->getRenderer(), &rect);
+	}
+
+	if (paredL){
+		SDL_Rect rect =
+		{ 0, 0, 10, getGame()->getWindowHeight() };
+		SDL_RenderFillRect(game_->getRenderer(), &rect);
 	}
 }
 
@@ -96,7 +110,7 @@ void GameManager::onBorderExit(GameObject* ball, BallObserver::EXIT_SIDE side) {
 	else if (side == BOT) 
 		wallHit->play();
 
-	else if (side == RIGHT){
+	else if (side == RIGHT && !paredR){
 		leftScore++;
 		if (leftScore == 5){
 			for (int i = 0; i < nObservers; i++){
@@ -117,7 +131,7 @@ void GameManager::onBorderExit(GameObject* ball, BallObserver::EXIT_SIDE side) {
 		}
 	}
 
-	else if (side == LEFT){
+	else if (side == LEFT && !paredL){
 		rightScore++;
 		if (rightScore == 5){
 			for (int i = 0; i < nObservers; i++){
@@ -149,10 +163,23 @@ void GameManager::registerGameStateObserver(GameStateObserver* o) {
 
 
 void GameManager::onObstacleCollision(GameObject* obs, GameObject* o){
-	obs->update(); o->update();
+	if (!paredL && !paredR){
+		if (last_paddle_hit_​ == palaL){
+			paredL = true;
+		}
+
+		else if (last_paddle_hit_​ == palaR){
+			paredR = true;
+		}
+	}
+
 }
 
 void GameManager::onObstacleStateChange(GameObject* obs, bool state){
 
+	if (!state){
+		paredL = false;
+		paredR = false;
+	}
 
 }

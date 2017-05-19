@@ -10,7 +10,7 @@
 #include "TimedObstacleObserver.h"
 
 
-class GameManager: public GameObject, public BallObserver {
+class GameManager: public GameObject, public BallObserver, public TimedObstacleObserver {
 
 public:
 	GameManager(SDLGame* game, GameObject* leftPaddle, GameObject* rightPaddle);
@@ -27,6 +27,7 @@ public:
 	virtual void onCollision(GameObject* ball, GameObject* o);
 	virtual void onBorderExit(GameObject* ball, BallObserver::EXIT_SIDE side);
 
+	//from TimedObstacleObserver
 	virtual void onObstacleCollision(GameObject* obs, GameObject* o);
 	virtual void onObstacleStateChange(GameObject* obs, bool state);
 
@@ -59,7 +60,8 @@ private:
 
 	SDL_Color color;
 
-	bool pared = false;
+	bool paredL = false;
+	bool paredR = false;
 };
 
 #endif /* SCOREBOARD_H_ */

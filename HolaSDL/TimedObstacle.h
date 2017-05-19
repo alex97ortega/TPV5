@@ -3,7 +3,7 @@
 #include "GameObject.h"
 #include "GameStateObserver.h"
 #include "TimedObstacleObserver.h"
-#include "RenderComponent.h"
+#include "RectRender.h"
 
 class TimedObstacle : public GameObject, public GameStateObserver {
 
@@ -12,18 +12,19 @@ public:
 	TimedObstacle(SDLGame* game, int pTime, int dTime, GameObject* ball);
 	virtual ~TimedObstacle();
 	virtual void addObserver(TimedObstacleObserver* o);
+	virtual void update();
+	virtual void handleInput(const SDL_Event& event){};
+	virtual void render();
+	virtual void onGameStart(){};
+	virtual void onGameOver(){};
+	virtual void onRoundStart(){};
+	virtual void onRoundOver(){};
 
-	void handleInput(const SDL_Event& event){}
-	void update();
-	void render(){}
+
+
 	void Fptime();
 	void Fdtime();
 	
-
-	void onGameStart(){}
-	 void onGameOver(){}
-	 void onRoundStart(){}
-	 void onRoundOver(){}
 private:
 
 	int ptime;
@@ -33,7 +34,8 @@ private:
 
 	GameObject* bola;
 
-	RenderComponent* rend;
+	SDL_Color c;
+	RectRender* rend;
 	std::vector<TimedObstacleObserver*> observers;
 	int nObbservers = 0;
 

@@ -9,8 +9,8 @@ TimedObstacle::TimedObstacle(SDLGame* game, int pTime, int dTime, GameObject* ba
 
 	estado = false;
 	gaming = true;
-	SDL_Color c = { 255, 255, 255, 255 };
 
+	c = { 255, 255, 255, 255 };
 	rend = new RectRender(c);
 
 	bola = ball;
@@ -43,7 +43,9 @@ void TimedObstacle::Fptime(){
 			observers[i]->onObstacleStateChange(this, estado);
 		}
 		SDL_AddTimer(dtime, dtimeFunc, this);
-		this->setPosition(0, 0);//random
+		setHeight(50);
+		setWidth(50);
+		setPosition(rand() % 500 + 100, rand() % 400 + 100);
 	}
 	else
 		gaming = true;
@@ -63,15 +65,19 @@ void TimedObstacle::update(){
 		gaming = false;
 	}
 
-	if (estado){
-		rend->render(this);
-	}
+	
 
-	if (this->getPosition().getX() <= bola->getPosition().getX() && this->getPosition().getX() >= bola->getPosition().getX() + bola->getWidth() &&
-		this->getPosition().getY() <= bola->getPosition().getY() && this->getPosition().getY() >= bola->getPosition().getY() + bola->getHeight()){
+	if (bola->getPosition().getX() > getPosition().getX() && bola->getPosition().getX() < getPosition().getX() + getWidth() &&
+		bola->getPosition().getY() > getPosition().getY() && bola->getPosition().getY() < getPosition().getY() + getHeight()){
 		estado = false;
 		for (int i = 0; i < nObbservers; i++){
 			observers[i]->onObstacleCollision(this, bola);
 		}
+	}
+}
+
+void TimedObstacle::render(){
+	if (estado){
+		rend->render(this);
 	}
 }
