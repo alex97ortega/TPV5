@@ -18,6 +18,10 @@ TimedObstacle::TimedObstacle(SDLGame* game, int pTime, int dTime, GameObject* ba
 
 TimedObstacle::~TimedObstacle()
 {
+	bola = nullptr;
+	rend = nullptr;
+	delete bola;
+	delete rend;
 }
 
 void TimedObstacle::addObserver(TimedObstacleObserver* o){

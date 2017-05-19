@@ -148,6 +148,7 @@ void PingPong::closeGame() {
 
 	player1 = nullptr;
 	player2 = nullptr;
+	obstaculo = nullptr;
 
 	delete right_paddle_;
 	delete left_paddle_;
@@ -172,6 +173,7 @@ void PingPong::closeGame() {
 
 	delete player1;
 	delete player2;
+	delete obstaculo;
 }
 
 void PingPong::start() {
