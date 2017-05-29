@@ -1,10 +1,11 @@
-﻿Compilación iniciada a las 19/05/2017 12:50:52.
-     1>Proyecto "D:\TPV\practica6\ew\TPV5\HolaSDL\HolaSDL.vcxproj" en el nodo 2 (Build destinos).
+﻿Build started 29/05/2017 16:01:29.
+     1>Project "C:\hlocal\TPV5\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt PingPong.cpp
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt PingPong.cpp
          PingPong.cpp
+     1>cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\TPV\practica6\ew\TPV5\bin\HolaSDLDebug.exe" /INCREMENTAL /NOLOGO SDL2_ttf.lib SDL2_mixer.lib SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\TPV\practica6\ew\TPV5\bin\HolaSDLDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\TPV\practica6\ew\TPV5\bin\HolaSDLDebug.lib" /MACHINE:X86 Debug\BallObserver.obj
+         C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\TPV5\bin\HolaSDLDebug.exe" /INCREMENTAL /NOLOGO SDL2_ttf.lib SDL2_mixer.lib SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\TPV5\bin\HolaSDLDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\TPV5\bin\HolaSDLDebug.lib" /MACHINE:X86 Debug\BallObserver.obj
          Debug\BounceOnBorders.obj
          Debug\ComponentSwitcher.obj
          Debug\Font.obj
@@ -32,9 +33,9 @@
          Debug\Texture.obj
          Debug\TimedObstacle.obj
          Debug\Vector2D.obj
-         HolaSDL.vcxproj -> D:\TPV\practica6\ew\TPV5\bin\HolaSDLDebug.exe
-     1>Compilación del proyecto terminada "D:\TPV\practica6\ew\TPV5\HolaSDL\HolaSDL.vcxproj" (Build destinos).
+         HolaSDL.vcxproj -> C:\hlocal\TPV5\bin\HolaSDLDebug.exe
+     1>Done Building Project "C:\hlocal\TPV5\HolaSDL\HolaSDL.vcxproj" (Build target(s)).
 
-Compilación correcta.
+Build succeeded.
 
-Tiempo transcurrido 00:00:00.72
+Time Elapsed 00:00:00.63

@@ -9,10 +9,9 @@ PaddleAIPhysics::~PaddleAIPhysics() {
 }
 
 void PaddleAIPhysics::init(GameObject* paddle) {
-	 if (i < 2){
 		paddle->setPositionY(paddle->getGame()->getWindowHeight() / 2);
 		i++;
-	}
+	
 }
 
 void PaddleAIPhysics::update(GameObject* paddle) {

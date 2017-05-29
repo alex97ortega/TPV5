@@ -210,6 +210,8 @@ void PingPong::handleInput() {
 				break;
 				// Pressing f to toggle fullscreen.
 			case SDLK_f:
+
+
 				int flags = SDL_GetWindowFlags(window_);
 				if (flags & SDL_WINDOW_FULLSCREEN) {
 					SDL_SetWindowFullscreen(window_, 0);

@@ -8,6 +8,7 @@ PaddleMouseInputComp::~PaddleMouseInputComp() {
 }
 
 void PaddleMouseInputComp::init(GameObject* paddle) {
+
 	paddle->setPosition(paddle->getPosition().getX(), 0);
 }
 
