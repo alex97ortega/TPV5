@@ -71,6 +71,20 @@ private:
 	std::vector<GameObject*> actors_;
 
 	bool exit_;
+
+	InputComponent* paddleInput1 =  new PaddleKeyboardInputComp(SDLK_a, SDLK_z, SDLK_s, 10);
+	InputComponent* paddleInput2 = new PaddleKeyboardInputComp(SDLK_UP, SDLK_DOWN, SDLK_SPACE, 10);
+	PhysicsComponent* stopPhysics = new StopOnBordersPhysics(false, false, true, true);
+	InputComponent* mouseInput = new PaddleMouseInputComp();
+
+	PhysicsComponent* playerBall = new PaddleAIPhysics(ball_);
+
+	RenderComponent* keyboardIcon =	new ImageRendered(getResources()->getTexture(SDLGame::KeyBoardIcon));
+	RenderComponent* mouseIcon = new ImageRendered(getResources()->getTexture(SDLGame::MouseIcon));
+	RenderComponent*  AIicon = new ImageRendered(getResources()->getTexture(SDLGame::AIIcon));
+
+	
+
 };
 
 #endif /* PINGPONG_H_ */

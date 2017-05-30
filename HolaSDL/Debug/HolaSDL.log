@@ -1,9 +1,9 @@
-﻿Build started 29/05/2017 16:01:29.
-     1>Project "C:\hlocal\TPV5\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
+﻿Compilación iniciada a las 30/05/2017 16:24:11.
+     1>Proyecto "C:\hlocal\TPV5\HolaSDL\HolaSDL.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt PingPong.cpp
-         PingPong.cpp
-     1>cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt PaddleKeyboardInputComp.cpp
+         PaddleKeyboardInputComp.cpp
+     1>cl : Línea de comandos warning D9028: error de recompilación mínimo, revirtiendo a la compilación normal
        Link:
          C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\TPV5\bin\HolaSDLDebug.exe" /INCREMENTAL /NOLOGO SDL2_ttf.lib SDL2_mixer.lib SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\TPV5\bin\HolaSDLDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\TPV5\bin\HolaSDLDebug.lib" /MACHINE:X86 Debug\BallObserver.obj
          Debug\BounceOnBorders.obj
@@ -34,8 +34,8 @@
          Debug\TimedObstacle.obj
          Debug\Vector2D.obj
          HolaSDL.vcxproj -> C:\hlocal\TPV5\bin\HolaSDLDebug.exe
-     1>Done Building Project "C:\hlocal\TPV5\HolaSDL\HolaSDL.vcxproj" (Build target(s)).
+     1>Compilación del proyecto terminada "C:\hlocal\TPV5\HolaSDL\HolaSDL.vcxproj" (Build destinos).
 
-Build succeeded.
+Compilación correcta.
 
-Time Elapsed 00:00:00.63
+Tiempo transcurrido 00:00:00.63

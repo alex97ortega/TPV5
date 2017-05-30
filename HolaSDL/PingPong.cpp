@@ -88,9 +88,9 @@ void PingPong::initGame() {
 	leftIcon->setWidth(50);
 	leftIcon->setPosition(25, 25);
 	player1 = new ComponentSwitcher(this, left_paddle_, SDLK_1, leftIconIMG, leftIcon);
-	player1->addMode(new PaddleKeyboardInputComp(SDLK_a, SDLK_z, SDLK_s, 10), new StopOnBordersPhysics(false, false, true, true), rectangleRenderer_, new ImageRendered(getResources()->getTexture(SDLGame::KeyBoardIcon)));
-	player1->addMode(new PaddleMouseInputComp(), new StopOnBordersPhysics(false, false, true, true), rectangleRenderer_, new ImageRendered(getResources()->getTexture(SDLGame::MouseIcon)));
-	player1->addMode(NULL, new PaddleAIPhysics(ball_), rectangleRenderer_, new ImageRendered(getResources()->getTexture(SDLGame::AIIcon)));
+	player1->addMode(paddleInput1, stopPhysics, rectangleRenderer_, keyboardIcon);
+	player1->addMode(mouseInput, stopPhysics, rectangleRenderer_, mouseIcon);
+	player1->addMode(NULL, playerBall, rectangleRenderer_, AIicon);
 	player1->setMode(player1->currentMode);
 
 
@@ -99,9 +99,9 @@ void PingPong::initGame() {
 	rightIcon->setHeight(50);
 	rightIcon->setPosition(getWindowWidth() - rightIcon->getWidth() - 25, 25);
 	player2 = new ComponentSwitcher(this, right_paddle_, SDLK_2, rightIconIMG, rightIcon);
-	player2->addMode(new PaddleKeyboardInputComp(SDLK_UP, SDLK_DOWN, SDLK_SPACE, 10), new StopOnBordersPhysics(false, false, true, true), rectangleRenderer_, new ImageRendered(getResources()->getTexture(SDLGame::KeyBoardIcon)));
-	player2->addMode(new PaddleMouseInputComp(), new StopOnBordersPhysics(false, false, true, true), rectangleRenderer_, new ImageRendered(getResources()->getTexture(SDLGame::MouseIcon)));
-	player2->addMode(NULL, new PaddleAIPhysics(ball_), rectangleRenderer_, new ImageRendered(getResources()->getTexture(SDLGame::AIIcon)));
+	player2->addMode(paddleInput2, stopPhysics, rectangleRenderer_, keyboardIcon);
+	player2->addMode(mouseInput, stopPhysics, rectangleRenderer_, mouseIcon);
+	player2->addMode(NULL, playerBall, rectangleRenderer_, AIicon);
 	player2->setMode(player2->currentMode);
 
 	// game manager
@@ -150,6 +150,15 @@ void PingPong::closeGame() {
 	player2 = nullptr;
 	obstaculo = nullptr;
 
+	paddleInput1 = nullptr;
+	paddleInput2 = nullptr;
+	stopPhysics = nullptr;
+	mouseInput = nullptr;
+	playerBall = nullptr;
+	keyboardIcon = nullptr;
+	mouseIcon = nullptr;
+	AIicon = nullptr;
+
 	delete right_paddle_;
 	delete left_paddle_;
 	delete ball_;
@@ -174,6 +183,16 @@ void PingPong::closeGame() {
 	delete player1;
 	delete player2;
 	delete obstaculo;
+
+	delete paddleInput1;
+	delete paddleInput2;
+	delete stopPhysics;
+	delete mouseInput;
+	delete playerBall;
+	delete keyboardIcon;
+	delete mouseIcon;
+	delete AIicon;
+
 }
 
 void PingPong::start() {

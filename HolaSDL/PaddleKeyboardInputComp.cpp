@@ -15,18 +15,18 @@ void PaddleKeyboardInputComp::init(GameObject* paddle) {
 }
 
 void PaddleKeyboardInputComp::handleInput(SDL_Event event, GameObject* paddle) {
-
-	if (event.key.keysym.sym == up_key_){
-		velocity_ = -10;
+	if (event.key.type == SDL_KEYDOWN){
+		if (event.key.keysym.sym == up_key_){
+			velocity_ = -10; 
+		}
+		else if (event.key.keysym.sym == down_key_){
+			velocity_ = 10;
+		}
+		else if (event.key.keysym.sym == stop_key_){
+			init(paddle);
+		}
+		paddle->setDirectionY(velocity_);
 	}
-	else if (event.key.keysym.sym == down_key_){
-		velocity_ = 10;
-	}
-	else if (event.key.keysym.sym == stop_key_){
-		init(paddle);
-	}
-	paddle->setDirectionY(velocity_);	
-
 }
 
 PaddleKeyboardInputComp::~PaddleKeyboardInputComp() {
